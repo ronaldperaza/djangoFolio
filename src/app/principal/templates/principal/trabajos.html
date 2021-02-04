@@ -1,0 +1,81 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ronald Peraza | Inicio</title>
+
+    <!-- Estilos css -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <!-- 2 Links de Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,500;1,400&family=Red+Hat+Text&
+    display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    
+    <!-- Menu Navegacion -->
+    <header id="header">
+      <nav class="menu">
+        <div class="logo-box">
+          <h1><a href="/">Ronald Peraza</a></h1>
+          <span class="btn-menu"><i class="fas fa-bars"></i></span>
+        </div>
+
+        <div class="list-container">
+          <ul class="lists">
+            <li><a href="/" class="active">Inicio</a></li>            
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Fin Menu Navegacion -->
+    <br /><br />
+
+    
+      <!-- Proyectos -->
+      <section class="our-projects" id="portafolio">
+        <div class="skew-arriba"></div>
+        <div class="deg-background"></div>
+
+        <div class="ejeZproject">
+          <div class="container-project">
+            <div class="project-img">
+              {% for proyecto in proyectos %}
+                <img src="{{proyecto.imagen.url}}" alt="" />
+              {% endfor %}            
+            </div>
+            <div class="skew-abajo"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    
+
+    <!-- Scrips JS -->
+    <script
+      src="https://kit.fontawesome.com/62117d926a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'js/app.js' %}"></script>
+  </body>
+</html>
+
+
+
+{% for proyecto in proyectos %}
+    {{ proyecto.titulo }}
+
+{% endfor %}
+
+
+
